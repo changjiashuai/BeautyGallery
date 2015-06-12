@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class GalleryViewController: UIViewController {
 
@@ -18,8 +19,30 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if imageName != nil{
-            beautyImage.image = UIImage(named: imageName)
+        if let name = imageName {
+            beautyImage.image = UIImage(named: name)
+            
+            switch name{
+            case "fangbingbing":
+                navigationItem.title = "范冰冰"
+                break;
+            case "libingbing":
+                navigationItem.title = "李冰冰"
+                break;
+            case "wangfei":
+                navigationItem.title = "王菲"
+                break;
+            case "yangmi":
+                navigationItem.title = "杨幂"
+                break;
+                
+            case "zhouxu":
+                navigationItem.title = "周迅"
+                break;
+            default:
+                navigationItem.title = "女神画廊"
+                break;
+            }
         }
     }
 
@@ -29,6 +52,13 @@ class GalleryViewController: UIViewController {
     }
     
 
+    @IBAction func shareTapped(sender: AnyObject) {
+        var controller = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        controller.setInitialText("share text")
+        controller.addImage(beautyImage.image)
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

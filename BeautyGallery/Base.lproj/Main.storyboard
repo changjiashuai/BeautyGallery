@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xqd-mY-BPx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--女神画廊-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BeautyGallery" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,19 +37,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Z6E-pL-jo9" kind="modal" identifier="GoToGallery" id="PNp-KD-UZj"/>
+                                    <segue destination="Z6E-pL-jo9" kind="push" identifier="GoToGallery" id="PNp-KD-UZj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="女神画廊" id="dL8-1d-Bvb"/>
                     <connections>
                         <outlet property="beautyPicker" destination="oX3-ke-ods" id="N0z-3X-r8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234.66666666666666" y="366.36000000000001"/>
+            <point key="canvasLocation" x="766" y="366"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="exc-ee-MMT">
@@ -76,6 +77,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="edv-ET-9x6">
+                        <barButtonItem key="rightBarButtonItem" title="分享" id="IVW-t0-QHs">
+                            <connections>
+                                <action selector="shareTapped:" destination="Z6E-pL-jo9" id="nSy-NV-yn1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="beautyImage" destination="pY6-BU-WoU" id="mFZ-L8-Fn6"/>
                     </connections>
@@ -83,7 +91,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esd-m3-4PZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xZn-Vc-e2k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="635" y="366"/>
+            <point key="canvasLocation" x="1167" y="366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aAV-QH-n7B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xqd-mY-BPx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lfU-Lu-6TF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="wT7-2H-GFT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcL-QK-nA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="366"/>
         </scene>
     </scenes>
     <resources>
